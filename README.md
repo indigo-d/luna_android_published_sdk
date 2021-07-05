@@ -12,8 +12,8 @@ Download whole directory with all the files inside from https://github.com/indig
 ![](https://i.ibb.co/HGVxwyd/Screenshot-2021-07-05-at-15-57-03.png)
 
 ### 5.	Add library reference to build.gradle
-Go to your project scope build.gradle file and inside ‘ allProjects -> repositories ‘ block place maven repository url with full path to the app/libs directory
-&nbsp;
+Go to your project scope build.gradle file and inside `allProjects -> repositories` block place maven repository url with full path to the app/libs directory:
+
 ![](https://i.ibb.co/3ynzYjy/Screenshot-2021-07-05-at-15-59-01.png)
 
 ### 6. Add correct dependency
