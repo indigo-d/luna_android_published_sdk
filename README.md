@@ -56,5 +56,5 @@ One last thing left to do is starting Gateway foreground service so that it will
 
 &nbsp;
 *[1]* If you don’t know how to add and register Application extending class, here is how it is done
-![](https://i.ibb.co/gzqGq5T/Screenshot-2021-07-05-at-16-19-51.png)
+![](https://i.ibb.co/T4S8Ksy/Screenshot-2021-07-05-at-16-32-39.png)
 
