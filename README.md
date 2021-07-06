@@ -72,9 +72,9 @@ You can request location permissions yourself by following android developer tut
 
 One last thing left to do is starting Gateway foreground service so that it will scan for nearby devices (It will be already handled if you used our `LunaGatewayApplication` wrapper from step 5.1).
 
-Inside your Application class `onCreate()` function you just have to call `LunaFinderInitializer.getInstance([application context])` and provide it with your application context:
+Inside your Application class `onCreate()` function you just have to call `LunaGatewayInitializer.getInstance([application context])` and provide it with your application context:
 
-![](https://i.ibb.co/x2HGpGV/Screenshot-2021-07-05-at-16-13-38.png)
+![](https://i.ibb.co/x16XN2L/Screenshot-2021-07-06-at-12-34-03.png)
 
 ## Luna Gateway set up is finished, now you just have to make sure that your bluetooth is turned on, so that the app can scan correctly for nearby trackers
 
