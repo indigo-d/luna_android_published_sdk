@@ -32,34 +32,41 @@ c) **Sync Project with Gradle Files**
 
 ### 4. WorkManager Configuration
 
-To let the app start Gateway SDK automatically after restarting the device, you have to provide WorkManager Configuration through Application extending class *[1]* you can do it in one of two ways:
+To start Luna Gateway SDK automatically, you have to provide `WorkManager Configuration` in Application class. It can be done by SDK (recommended solution), or manually.
 
-#### 4.1 Recommended solution
+If the app doesn't have Application class yet, follow the [instuctions](https://docs.rudderstack.com/stream-sources/rudderstack-sdk-integration-guides/rudderstack-android-sdk/add-an-application-class-to-you-android-application).
 
-Instead of extending standard android Application you can just extend our Application wrapper called `LunaGatewayApplication`, this way LunaGateway foreground service will be launched automatically at the start of the application as well.  
+#### 4.1. Recommended solution
+
+Extend Application class with `LunaGatewayApplication` to launch Luna Gateway SDK foreground service automatically.
 
 ![](https://i.ibb.co/wYJG2r8/Screenshot-2021-07-05-at-16-05-18.png)
 
-#### 4.2 Standard solution
+#### 4.2. Manual solution
 
-You can implement `androidx.work.Configuration.Provider` yourself inside your Application class, and provide configuration for example like this:
+<details>
+  <summary>Show</summary>
+
+You can implement `androidx.work.Configuration.Provider` inside Application class and provide `Configuration` manually:
 
 ![](https://i.ibb.co/cy7vNKR/Screenshot-2021-07-05-at-16-07-24.png)
 
-but then you will need to add dependencies for `androidx.work` inside your module scope build.gradle file yourself as well:
+but then you will need to add dependencies for `androidx.work` inside your module scope `build.gradle` file:
 		
     implementation "androidx.work:work-runtime-ktx:2.5.0"
     implementation "androidx.work:work-multiprocess:2.5.0"
 		
+</details>
+	
 ### 5. Requesting foreground location permissions
 
-#### 5.1 Recommended solution
+#### 5.1. Recommended solution
 
 You can just extend one of your activities (preferably your launcher activity) with our `AppCompatActivity` wrapper called `LocationPermissionActivity()`, it will handle both asking user for location permissions and turning on device GPS module if it is not done yet, as well as showing user correct prompts for doing so.
 
 ![](https://i.ibb.co/YfWPbSR/Screenshot-2021-07-05-at-16-10-24.png)
 
-#### 5.2 Standard solution
+#### 5.2. Standard solution
 
 You can request location permissions yourself by following android developer tutorials:
 
@@ -75,7 +82,3 @@ Inside your Application class `onCreate()` function you just have to call `LunaG
 ![](https://i.ibb.co/x16XN2L/Screenshot-2021-07-06-at-12-34-03.png)
 
 ## Luna Gateway set up is finished, now you just have to make sure that your bluetooth is turned on, so that the app can scan correctly for nearby trackers
-
-*[1]* If you don’t know how to add and register Application extending class, here is how it is done
-![](https://i.ibb.co/T4S8Ksy/Screenshot-2021-07-05-at-16-32-39.png)
-
