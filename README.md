@@ -47,38 +47,37 @@ Extend Application class with `LunaGatewayApplication` to launch Luna Gateway SD
 <details>
   <summary>Show</summary>
 
-You can implement `androidx.work.Configuration.Provider` inside Application class and provide `Configuration` manually:
+a) Implement `androidx.work.Configuration.Provider` inside Application class, and provide `Configuration` manually:
 
 ![](https://i.ibb.co/cy7vNKR/Screenshot-2021-07-05-at-16-07-24.png)
 
-but then you will need to add dependencies for `androidx.work` inside your module scope `build.gradle` file:
+b) Add dependencies for `androidx.work` inside your module scope `build.gradle` file:
 		
     implementation "androidx.work:work-runtime-ktx:2.5.0"
     implementation "androidx.work:work-multiprocess:2.5.0"
+
+c) Inside Application class `onCreate()` function call `LunaGatewayInitializer.getInstance([application context])`:
+
+![](https://i.ibb.co/x16XN2L/Screenshot-2021-07-06-at-12-34-03.png)
 		
 </details>
 	
-### 5. Requesting foreground location permissions
+### 5. Request location permission
 
 #### 5.1. Recommended solution
 
-You can just extend one of your activities (preferably your launcher activity) with our `AppCompatActivity` wrapper called `LocationPermissionActivity()`, it will handle both asking user for location permissions and turning on device GPS module if it is not done yet, as well as showing user correct prompts for doing so.
+Extend one of the activities (preferably launcher activity) with `AppCompatActivity` wrapper called `LocationPermissionActivity` to handle asking the user for location permission and turning on device GPS module automatically.
 
 ![](https://i.ibb.co/YfWPbSR/Screenshot-2021-07-05-at-16-10-24.png)
 
-#### 5.2. Standard solution
+#### 5.2. Manual solution
 
-You can request location permissions yourself by following android developer tutorials:
+<details>
+  <summary>Show</summary>
+
+To request **"While using the app"** location permission manually follow the official tutorials:
 
 - https://developer.android.com/training/permissions/requesting
 - https://developer.android.com/training/location/permissions
-
-### Starting gateway foreground service
-
-One last thing left to do is starting Gateway foreground service so that it will scan for nearby devices (It will be already handled if you used our `LunaGatewayApplication` wrapper from step 4.1).
-
-Inside your Application class `onCreate()` function you just have to call `LunaGatewayInitializer.getInstance([application context])` and provide it with your application context:
-
-![](https://i.ibb.co/x16XN2L/Screenshot-2021-07-06-at-12-34-03.png)
-
-## Luna Gateway set up is finished, now you just have to make sure that your bluetooth is turned on, so that the app can scan correctly for nearby trackers
+	
+</details>
