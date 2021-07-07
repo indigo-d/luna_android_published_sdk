@@ -13,7 +13,7 @@ a) Inside **project** scope `build.gradle` file in `allProjects` -> `repositorie
 
 b) Inside **module** scope `build.gradle` file add dependency:
 
-    implementation 'com.lunanets:android-gateway-sdk:0.0.140'
+    implementation 'com.lunanets:android-gateway-sdk:0.0.142'
 
 c) **Sync Project with Gradle Files**
 
@@ -21,9 +21,9 @@ c) **Sync Project with Gradle Files**
 
 ### 2. WorkManager Configuration
 
-To start Luna Gateway SDK automatically, you have to provide `WorkManager Configuration` in Application class. It can be done by SDK (recommended solution), or manually.
+To start Luna Gateway SDK automatically, provide `WorkManager Configuration` in Application class. It can be done automatically by SDK (recommended solution), or manually.
 
-If the app doesn't have Application class yet, follow the [instuctions](https://docs.rudderstack.com/stream-sources/rudderstack-sdk-integration-guides/rudderstack-android-sdk/add-an-application-class-to-you-android-application).
+If the app doesn't have Application class yet, follow the [instructions](https://docs.rudderstack.com/stream-sources/rudderstack-sdk-integration-guides/rudderstack-android-sdk/add-an-application-class-to-you-android-application).
 
 #### 2.1. Recommended solution
 
@@ -36,7 +36,7 @@ Extend Application class with `LunaGatewayApplication` to launch Luna Gateway SD
 <details>
   <summary>Show</summary>
 
-a) Implement `androidx.work.Configuration.Provider` inside Application class, and provide `Configuration` manually:
+a) Implement `androidx.work.Configuration.Provider` inside Application class and provide `Configuration` manually:
 
 ![](https://i.ibb.co/cy7vNKR/Screenshot-2021-07-05-at-16-07-24.png)
 
@@ -55,7 +55,7 @@ c) Inside Application class `onCreate()` function call `LunaGatewayInitializer.g
 
 #### 3.1. Recommended solution
 
-Extend one of the activities (preferably launcher activity) with `AppCompatActivity` wrapper called `LocationPermissionActivity` to handle asking the user for location permission and turning on device GPS module automatically.
+Extend one of the activities (preferably launcher activity) with `AppCompatActivity` wrapper called `LocationPermissionActivity` to handle asking the user for location permission and turning on the device GPS module automatically.
 
 ![](https://i.ibb.co/YfWPbSR/Screenshot-2021-07-05-at-16-10-24.png)
 
@@ -70,3 +70,9 @@ To request **"While using the app"** location permission manually follow the off
 - https://developer.android.com/training/location/permissions
 	
 </details>
+
+### 4. Run the app
+
+Check the logs for `Luna Gateway SDK has been started` message. Hurray, the setup is done!
+
+![](https://i.ibb.co/Jn6pGPt/Screenshot-2021-07-07-at-16-51-46.png)
