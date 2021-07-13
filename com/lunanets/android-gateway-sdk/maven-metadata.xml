@@ -3,8 +3,9 @@
   <groupId>com.lunanets</groupId>
   <artifactId>android-gateway-sdk</artifactId>
   <versioning>
-    <release>0.0.143</release>
+    <release>0.0.144</release>
     <versions>
+      <version>0.0.144</version>
       <version>0.0.143</version>
       <version>0.0.142</version>
       <version>0.0.141</version>
