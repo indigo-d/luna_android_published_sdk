@@ -76,3 +76,27 @@ To request **"While using the app"** location permission manually follow the off
 Check the logs for `Luna Gateway SDK has been started` message. Hurray, the setup is done!
 
 ![](https://i.ibb.co/Jn6pGPt/Screenshot-2021-07-07-at-16-51-46.png)
+
+
+# Understanding LocationPermissionActivity wrapper
+## Overview
+**LocationPermissionActivity** class is just a wrapper that will make it as easy as possible to use our SDK in your application. You just have to extend your main activity with this class, and it will automatically handle asking user for needed permissions and switching GPS and Bluetooth modules on. Otherwise, it will behave like your standard android **AppCompatActivity**.
+## Handling user decisions results
+It is possible that while using our **LocationPermissionActivity** wrapper you will want to handle user decisions results yourself, for example show some additional message to the user after he declines granting proper permissions. You can do it easily with the help of our **OnPermissionsActivityResults** class:
+
+![](https://i.ibb.co/ys7J6WY/Screenshot-2021-07-14-at-15-24-17.png)
+
+This class is just a container for the functions that will be called after specific user decisions: 
+- Rejecting granting any or all the needed permissions
+- Rejecting turning bluetooth module on
+- Rejecting turning GPS module on
+- Fulfilling all requirements needed for Luna Gateway to work properly
+
+To use this functionality, inside your activity that extends **LocationPermissionActivity** you just have to override **onPermissionActivityResults** field with your own **OnPermissionsActivityResults** implementation:
+
+![](https://i.ibb.co/K2KXcLb/Screenshot-2021-07-14-at-15-31-39.png)
+
+You don't have to specify all the above methods, if you want to use just some of them, inside your implementation provide only those that you need to use. If methods called after rejecting the prompts to turn either bluetooth or location on won't be provided, there will be default persistent android Snackbar shown with message telling user that the Gateway will not work properly without the module that was just being rejected.
+
+![](https://i.ibb.co/SmBvXMm/Screenshot-2021-07-14-at-15-27-27.png)
+*Calling **showProperContent()** function after Luna Gateway starts working properly*
