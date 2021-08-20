@@ -13,7 +13,7 @@ a) Inside **project** scope `build.gradle` file in `allProjects` -> `repositorie
 
 b) Inside **module** scope `build.gradle` file add dependency:
 
-    implementation 'com.lunanets:android-gateway-sdk:0.0.146'
+    implementation 'com.lunanets:android-gateway-sdk:0.0.150'
 
 c) **Sync Project with Gradle Files**
 
