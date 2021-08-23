@@ -31,3 +31,7 @@ Temporary Items
 .apdisk
 
 # End of https://www.toptal.com/developers/gitignore/api/macos
+
+# encoded files created with "uploadArchives" gradle script, but not needed on the remote AAR library repository 
+**/*.md5
+**/*.sha1
