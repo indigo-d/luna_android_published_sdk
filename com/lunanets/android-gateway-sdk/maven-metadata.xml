@@ -3,10 +3,10 @@
   <groupId>com.lunanets</groupId>
   <artifactId>android-gateway-sdk</artifactId>
   <versioning>
-    <release>0.0.246</release>
+    <release>0.0.247</release>
     <versions>
-      <version>0.0.246</version>
+      <version>0.0.247</version>
     </versions>
-    <lastUpdated>20220307153505</lastUpdated>
+    <lastUpdated>20220308124618</lastUpdated>
   </versioning>
 </metadata>
