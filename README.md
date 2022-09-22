@@ -14,8 +14,16 @@ a) Inside **project** scope `build.gradle` file in `allProjects` -> `repositorie
 b) Inside **module** scope `build.gradle` file add dependency:
 
     implementation 'com.lunanets:android-gateway-sdk:0.0.308'
+    
+c) Inside **module** scope `build.gradle`, make sure to set `compileSdk` and `targetSdk` to 30
 
-c) **Sync Project with Gradle Files**
+![](https://user-images.githubusercontent.com/110383501/191746722-0ad40686-1e5a-4ab2-9069-be1070d591e7.png)
+
+d) Inside **module** scope `gradle.properties` add at bottom of file line: 
+
+	android.enableJetifier=true
+
+e) **Sync Project with Gradle Files**
 
 ![](https://i.ibb.co/yQZBVZ1/Screenshot-2021-07-06-at-14-35-12.png)
 
