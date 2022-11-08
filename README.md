@@ -8,12 +8,16 @@ a) Inside **project** scope `build.gradle` file in `allProjects` -> `repositorie
             url "https://raw.github.com/indigo-d/luna_android_published_sdk/master"
         }
     }
+    maven {
+            url 'https://repo.eclipse.org/content/repositories/egit-releases/'
+        }
+    maven { url 'https://github.com/team-ethernet/SenML_API/raw/mvn-repo' }
 
-![](https://i.ibb.co/fDdzVpf/Screenshot-2021-07-07-at-13-39-01.png)
+![](https://i.ibb.co/QcWLSQq/Screenshot-2022-11-08-at-17-52-52.png)
 
 b) Inside **module** scope `build.gradle` file add dependency:
 
-    implementation 'com.lunanets:android-gateway-sdk:0.0.312'
+    implementation 'com.lunanets:android-gateway-sdk:0.0.320'
     
 c) Inside **module** scope `build.gradle`, make sure to set `compileSdk` and `targetSdk` to 30
 
