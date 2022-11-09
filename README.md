@@ -17,7 +17,7 @@ a) Inside **project** scope `build.gradle` file in `allProjects` -> `repositorie
 
 b) Inside **module** scope `build.gradle` file add dependency:
 
-    implementation 'com.lunanets:android-gateway-sdk:0.0.320'
+    implementation 'com.lunanets:android-gateway-sdk:0.0.321'
     
 c) Inside **module** scope `build.gradle`, make sure to set `compileSdk` and `targetSdk` to 30
 
