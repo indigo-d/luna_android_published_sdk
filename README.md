@@ -5,7 +5,7 @@
 a) Inside **project** scope `build.gradle` file in `allProjects` -> `repositories` add path to the repository:
 
     maven {
-            url "https://raw.github.com/indigo-d/luna_android_published_sdk/master"
+            url "https://gitlab.com/luna-xio/luna-sdk-android-release/main"
         }
     }
     maven {
@@ -13,17 +13,15 @@ a) Inside **project** scope `build.gradle` file in `allProjects` -> `repositorie
         }
     maven { url 'https://github.com/team-ethernet/SenML_API/raw/mvn-repo' }
 
-![](https://i.ibb.co/QcWLSQq/Screenshot-2022-11-08-at-17-52-52.png)
-
 b) Inside **module** scope `build.gradle` file add dependency:
 
     implementation 'com.lunanets:android-gateway-sdk:0.0.321'
-    
+
 c) Inside **module** scope `build.gradle`, make sure to set `compileSdk` and `targetSdk` to 30
 
 ![](https://user-images.githubusercontent.com/110383501/191746722-0ad40686-1e5a-4ab2-9069-be1070d591e7.png)
 
-d) Inside **module** scope `gradle.properties` add at bottom of file line: 
+d) Inside **module** scope `gradle.properties` add at bottom of file line:
 
 	android.enableJetifier=true
 
@@ -53,16 +51,16 @@ a) Implement `androidx.work.Configuration.Provider` inside Application class and
 ![](https://i.ibb.co/cy7vNKR/Screenshot-2021-07-05-at-16-07-24.png)
 
 b) Add dependencies for `androidx.work` inside your module scope `build.gradle` file:
-		
+
     implementation "androidx.work:work-runtime-ktx:2.5.0"
     implementation "androidx.work:work-multiprocess:2.5.0"
 
 c) Inside Application class `onCreate()` function call `LunaGatewayInitializer.getInstance([application context])`:
 
 ![](https://i.ibb.co/x16XN2L/Screenshot-2021-07-06-at-12-34-03.png)
-		
+
 </details>
-	
+
 ### 3. Request location permission
 
 #### 3.1. Recommended solution
@@ -80,7 +78,7 @@ To request **"While using the app"** location permission manually follow the off
 
 - https://developer.android.com/training/permissions/requesting
 - https://developer.android.com/training/location/permissions
-	
+
 </details>
 
 ### 4. Run the app
@@ -98,7 +96,7 @@ It is possible that while using our `LocationPermissionActivity` wrapper you wil
 
 ![](https://i.ibb.co/ys7J6WY/Screenshot-2021-07-14-at-15-24-17.png)
 
-This class is just a container for the functions that will be called after specific user decisions: 
+This class is just a container for the functions that will be called after specific user decisions:
 - Rejecting granting any or all the needed permissions
 - Rejecting turning bluetooth module on
 - Rejecting turning GPS module on
