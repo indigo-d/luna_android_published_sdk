@@ -5,7 +5,7 @@
 a) Inside **project** scope `build.gradle` file in `allProjects` -> `repositories` add path to the repository:
 
     maven {
-            url "https://gitlab.com/luna-xio/luna-sdk-android-release/main"
+            url "https://gitlab.com/luna-xio/luna-sdk-android-release/-/raw/main"
         }
     }
     maven {
